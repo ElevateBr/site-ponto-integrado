@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const animationManager = new AnimationManager();
     const cssAnimationManager = new CSSAnimationManager();
     
+    // Sistema da marca d'água
+    const watermarkManager = new WatermarkManager();
+    
     // ===== FUNCIONALIDADES ADICIONAIS =====
     
     // Melhorias de acessibilidade
