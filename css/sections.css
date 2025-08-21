@@ -496,14 +496,18 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: var(--border-radius-medium);
     transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-light);
+    border: 1px solid rgba(46, 125, 50, 0.1);
 }
 
 .contact-item:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: rgba(46, 125, 50, 0.3);
 }
 
 .contact-icon {
@@ -539,16 +543,31 @@
 
 .contact-form {
     order: 1;
-    background: var(--bg-secondary);
-    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.95);
+    padding: var(--spacing-xl);
     border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(46, 125, 50, 0.1);
 }
 
 .contact-form h3 {
     color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
     text-align: center;
     font-size: clamp(1.5rem, 4vw, 1.8rem);
+    position: relative;
+}
+
+.contact-form h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--bg-gradient);
+    border-radius: 2px;
 }
 
 /* ===== SEÇÃO LOCALIZAÇÃO ===== */
@@ -626,6 +645,53 @@
     background: var(--bg-dark);
     color: var(--text-white);
     padding: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+/* ===== CRÉDITOS ELEVATE ===== */
+.elevate-credits {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.elevate-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0 0 var(--spacing-xs) 0;
+    opacity: 0.8;
+}
+
+.elevate-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.elevate-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    transition: transform var(--transition-normal);
+}
+
+.elevate-link:hover {
+    transform: scale(1.05);
+}
+
+.elevate-img {
+    height: 25px;
+    width: auto;
+    object-fit: contain;
+}
+
+.elevate-name {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
 }
 
 .footer-content {
@@ -854,4 +920,6 @@
     .location-content {
         gap: calc(var(--spacing-xxl) * 2);
     }
-} 
+}
+
+ 

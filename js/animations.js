@@ -370,10 +370,27 @@ class CSSAnimationManager {
     }
 }
 
+// ===== GERENCIADOR DA MARCA D'ÁGUA =====
+class WatermarkManager {
+    constructor() {
+        this.watermark = document.querySelector('.watermark');
+        this.init();
+    }
+    
+    init() {
+        if (this.watermark) {
+            // Garante que a marca d'água seja visível
+            this.watermark.style.display = 'block';
+            this.watermark.style.visibility = 'visible';
+        }
+    }
+}
+
 // Exporta as classes para uso em outros módulos
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { AnimationManager, CSSAnimationManager };
+    module.exports = { AnimationManager, CSSAnimationManager, WatermarkManager };
 } else {
     window.AnimationManager = AnimationManager;
     window.CSSAnimationManager = CSSAnimationManager;
+    window.WatermarkManager = WatermarkManager;
 } 
